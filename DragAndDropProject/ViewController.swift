@@ -23,6 +23,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configure()
+    }
+    
+    fileprivate func configure() {
         view.backgroundColor = UIColor.white
         title = "Drag & Drop"
         
@@ -42,6 +46,7 @@ class ViewController: UIViewController {
         collection.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "CELL")
         collection.contentInset = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
     }
+    
     fileprivate func reorderItem(coordinator: UICollectionViewDropCoordinator, destinationIndexPath: IndexPath, collectionView: UICollectionView) {
         if let item = coordinator.items.first,
            let sourceIndexPath = item.sourceIndexPath {
